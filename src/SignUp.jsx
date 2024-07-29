@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import FacebookIcon from './FacebookIcon';
 import GoogleIcon from './GoogleIcon';
@@ -6,6 +6,7 @@ import AppleIcon from './AppleIcon';
 import HeadSet from './Headset';
 
 function SignUp({ setSigned }) {
+
   const handleForm = (e) => {
     e.preventDefault();
     setSigned(true);
@@ -13,7 +14,7 @@ function SignUp({ setSigned }) {
 
   return (
     <div className="bg-gradient-to-br from-black to-[#08a76a] bg-fixed flex justify-center items-center h-screen w-screen">
-      <div className="h-[70%] shadow-2xl rounded-2xl bg-gray-200 bg-opacity-80 flex flex-col w-[25%]">
+      <div className="h-[80%] shadow-2xl rounded-2xl bg-gray-200 bg-opacity-80 flex flex-col w-[25%]">
         <div className="flex py-12 gap-4 flex-col justify-center items-center w-full">
           <span className="flex">
             <h1 className="text-5xl font-semibold cursor-default">Audio</h1>
@@ -22,6 +23,18 @@ function SignUp({ setSigned }) {
           <p className="text-xl font-semibold cursor-default">It's modular and designed to last</p>
         </div>
         <form className="flex justify-center items-center py-10 px-6 flex-col gap-6">
+          <div className='flex gap-x-4 relative'>
+              <input
+                type="text"
+                placeholder='Firs Name'
+                className="text-lg h-14 px-6 rounded-xl shadow-lg transform focus:scale-105 duration-200 outline-none focus:border-2 focus:border-[#0ACF83] bg-gray-100 w-full"
+              />
+            <input
+              type="text"
+              placeholder="Last Name"
+              className="text-lg h-14 px-6 rounded-xl shadow-lg transform focus:scale-105 duration-200 outline-none focus:border-2 focus:border-[#0ACF83] bg-gray-100 w-full"
+            />
+          </div>
           <input
             type="email"
             placeholder="Email"
